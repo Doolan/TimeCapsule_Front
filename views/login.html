@@ -1,4 +1,4 @@
-<div class="ui small modal" id="login-modal">
+<div class="ui small modal" id="login-modal" ng-controller="loginController">
 
     <!--<div class="header">-->
         <!--<div class="ui container">-->
@@ -35,8 +35,8 @@
     <div class="actions">
         <button class="ui left floated cancel basic button ">Cancel</button>
         <div class="login" ng-show="true">
-            <button class="ui approve basic button">Sign up</button>
-            <button class="ui approve inverted green button">Log in</button>
+            <button class="ui active basic button" ng-click="redirectFunction();">Sign up</button>
+            <button class="ui active inverted green button" ng-click="redirectFunction();">Log in</button>
         </div>
         <div class="sign up" ng-show="false">
         <div class="ui button">Log in</div>
