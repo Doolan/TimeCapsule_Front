@@ -16,5 +16,12 @@ angular.module('TimeCapsule')
             templateUrl: '../../views/about.html'
         };
     }
+).directive('login', function () {
+        return {
+            scope:false,
+            restrict: 'E',
+            templateUrl: '../../views/login.html'
+        };
+    }
 );
 

@@ -1,0 +1,46 @@
+<div class="ui small modal" id="login-modal">
+
+    <!--<div class="header">-->
+        <!--<div class="ui container">-->
+            <!--<i class="ui remove icon right floated ui cancel" style="float: right" title="Cancel"></i>-->
+            <!--<h3 class="ui  siteName">Time Capsule</h3>-->
+            <!--&lt;!&ndash;<h3><small>Log in</small></h3>&ndash;&gt;-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="content">
+
+        <form class="ui large form">
+            <div class="ui sub header"ng-show="true">Log in</div>
+            <div class="ui sub header" ng-show="false">Log in</div>
+            <!--<div class="ui stacked segment">-->
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="user icon"></i>
+                    <input type="text" name="email" placeholder="E-mail address">
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="lock icon"></i>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+            </div>
+            <!--<div class="ui fluid large teal submit button">Login</div>-->
+            <!--</div>-->
+
+            <div class="ui error message"></div>
+
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui left floated cancel basic button ">Cancel</button>
+        <div class="login" ng-show="true">
+            <button class="ui approve basic button">Sign up</button>
+            <button class="ui approve inverted green button">Log in</button>
+        </div>
+        <div class="sign up" ng-show="false">
+        <div class="ui button">Log in</div>
+        <div class="ui approve button">Sign up</div>
+        </div>
+    </div>
+</div>
