@@ -22,6 +22,7 @@ In the unlikely case Semanitic UI has installation errors:
 npm install -g gulp
 npm install semantic-u --save 
 #Or
+
 npm install
 #Then
 cd semantic-ui/

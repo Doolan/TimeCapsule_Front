@@ -1,247 +1,43 @@
 /*Overall attributes*/
-*{
-    color: #FFFFFF;
-}
+/**{*/
+    /*color: #FFFFFF;*/
+/*}*/
 
 body {
     font-family: 'Montserrat', sans-serif;
 }
 
-#heading-underline {
-    max-width: 70px;
-    height: 5px;
-    background: #FFFFFF;
-}
-
-.layer1 {
-    z-index: 2;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    position: fixed;
-}
-
-.layer2 {
-    z-index: 101;
-    position: absolute;
-    width: 100%;
-}
-
-.screen {
-    background-color: #181415;
-    opacity: 0.5;
-    height: 100%;
-}
-
-.bold-h3 {
-    font-weight: 900;
-    font-size: 1.5rem;
-}
-
-.middle-div {
-    margin: 0 auto; /* requires a set width */
-}
-
-.top, .bottom {
-    height: 50vh;
-    overflow: hidden;
-}
-
-.heading * {
-    display: inline;
-}
-
-.section {
-    padding: 2em 0;
-}
-
-/*-------------------- Home ----------------------------------*/
-#home {
-    background: url('/images/RHIT_Self_Made_Man-1.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100vh;
-}
-
-#home .layer2 {
-    top: 7vh;
-    width: 100vw;
-}
-
-#rose-logo {
-    width: 80%;
-}
-
-#base-main-logo {
-    /*max-width:40vmin;*/
-    margin: 0 auto;
-    width: inherit;
-}
-
-.title-page-text * {
+h2.siteName{
+    font: 400 125px/1.3 'Arizonia', Helvetica, sans-serif;
+    /*color: #2b2b2b;*/
+    color: #e1e1e1;
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
     text-align: center;
 }
-
-.title-page-text {
-    width: 35em;
-    color: #FFFFFF;
+h2.siteName:hover {
+    /*color: #e1e1e1;*/
 }
 
-.button-div .button {
-    display: inline-block;
-    font-size: 1.7em;
+/** Landing Page **/
+div.centered.name {
+    padding-top: 23vh;
+    padding-bottom: 8vh;
 }
 
-/*--------------------About ----------------------------------*/
+#landingPage{
+    height: 110vh;
+    background: url('/images/tiles/grey_wash_wall.png') repeat center center ;
+}
+
 #about {
-    /*background-color: #4f7588;*/
-    padding: 2em;
-    background: url('/images/random_grey_variations_@2X.png') repeat center center ;
+    padding:40vh 0 60vh 0 ;
+    height: 28vh;
+    /*z-index: -100;*/
+    background-color: #e1e1e1;
 }
 
-#about .layer2 {
-    position: absolute;
-    height: auto;
-}
-
-/*--------------------Challenges ----------------------------------*/
-#challenges {
-    /*background-color: #A7BCD6;*/
-    width: 100%;
-    min-height: 100vh;
-    background: url('/images/RHIT_Self_Made_Man-10.jpg') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-#challenges .layer2 {
-    color: #FFFFFF;
-    padding: 2em 0;
-}
-
-#challenges h1 {
-    padding-bottom: 2em;
-}
-
-#challenges .column h2 {
-    text-align: center;
-}
-
-#challenges .column {
-    height: 70vh;
-    /*background-color: #a7bcd6;*/
-    padding: auto 0;
-    margin: 10px;
-}
-
-/*--------------------WHEN AND WHERE ----------------------------------*/
-#when-and-where {
-    background-color: #54585A;
-    width: 100%;
-    min-height: 100vh;
-}
-
-#when-and-where .layer2 {
-    width: 100%;
-    color: #FFFFFF;
-}
-
-#when-and-where h1 {
-    padding: 2.5em 0;
-}
-
-#when-and-where a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.where {
-    padding-top: 2em;
-}
-
-#when-and-where .column {
-    height: 70vh;
-}
-
-#self-made-man {
-    max-height: 74vh;
-}
-
-.when td {
-    padding: .715em .715em .715em 0;
-    margin-right: .5em;
-}
-
-/*-------------------- Schedule ----------------------------------*/
-#schedule {
-    /*background-color: #A7BCD6;*/
-    width: 100%;
-    min-height: 100vh;
-    /*z-index: 50;*/
-    background: url('/images/congruent_outline.png') repeat center center ;
-    /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*-o-background-size: cover;*/
-    /*background-size: cover;*/
-    /*height: 100vh;*/
-}
-
-#schedule .layer2 {
-    color: #FFFFFF;
-}
-
-#schedule h1 {
-    padding: 2em 0;
-}
-
-#schedule .column h2 {
-    text-align: center;
-}
-
-#schedule .column {
-    height: 70vh;
-    /*background-color: #a7bcd6;*/
-    padding: auto 0;
-    margin: 10px;
-}
-
-
-/*---------- Sponsors -------------- */
-#sponsors {
-    /*background-color: #A7BCD6;*/
-    width: 100%;
-    min-height: 100vh;
-    background: url('/images/White-Chapel.jpg') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-#sponsors .layer2 {
-    color: #FFFFFF;
-}
-
-#sponsors h1 {
-    padding: 2em 0;
-}
-
-
-/*---------- Map -------------- */
-#map iframe {
-    width: 100vw;
-}
-
-/*---------- FAQs -------------- */
-#faqs {
-    /*background-color: #A7BCD6;*/
-    padding: 2em;
-    width: 100%;
-    min-height: 100vh;
-    background: url('/images/escheresque_ste_@2X.png') repeat center center;
+.ui.piled.segment {
+    z-index: 5;
+    min-height: 20vh;
+    padding: 6vh 3vw 8vh;
 }

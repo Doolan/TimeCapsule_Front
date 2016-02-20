@@ -1,5 +1,5 @@
 (function() {
-    var app = angular.module('ChopChopApp', ['ngRoute']);
+    var app = angular.module('TimeCapsule', ['ngRoute']);
 
     //$('#simple-menu').sidr();
 
