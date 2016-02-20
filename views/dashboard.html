@@ -1,1 +1,47 @@
-<h1>Welcome to the Dashboard</h1>
+<div id="dashboard" ng-controller="dashboardController">
+<div class="ui container">
+    <h1>Dashboard</h1>
+    <div class="heading-underline"></div>
+    <div class="ui centered grid icon-buttons">
+        <div class="two wide column computer only"><!-- spacer--></div>
+        <div class="centered five wide computer twelve wide tablet column middle aligned">
+            <hover-icon-card
+                    hover-content="View pictures from your current location"
+                    iconexpression="['map']"
+                    content="Current Location"
+            ></hover-icon-card>
+        </div>
+        <div class="one wide column computer only"><!-- spacer--></div>
+        <div class="centered five wide computer twelve wide tablet column middle aligned">
+            <hover-icon-card
+                    hover-content="View pictures from other locations"
+                    iconexpression="['military']"
+                    content="Travel"
+            ></hover-icon-card>
+        </div>
+        <div class="two wide column computer only"><!-- spacer--></div>
+    </div>
+    <div class="ui centered grid icon-buttons">
+        <div class="two wide column computer only"><!-- spacer--></div>
+        <div class="centered five wide computer twelve wide tablet column middle aligned">
+            <hover-icon-card
+                    hover-content="Upload and tag images"
+                    iconexpression="['cloud', 'upload']"
+                    content="Upload images"
+            ></hover-icon-card>
+
+        </div>
+        <div class="one wide column computer only"><!-- spacer--></div>
+        <div class="centered five wide computer twelve wide tablet column middle aligned">
+            <hover-icon-card
+                    hover-content="View my profile and my pictures"
+                    iconexpression="['user']"
+                    content="My Information"
+            ></hover-icon-card>
+        </div>
+        <div class="two wide column computer only"><!-- spacer--></div>
+    </div>
+</div>
+
+
+</div>

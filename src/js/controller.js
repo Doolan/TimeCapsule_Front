@@ -59,7 +59,6 @@ angular.module('TimeCapsule')
                 });
         };
 
-
         $scope.loginConfirm = function(){
             if (!$('#login-modal .ui.form').form('validate form')) {
                 $('#login-modal .form .message').show();
@@ -87,4 +86,8 @@ angular.module('TimeCapsule')
                 return true;
             }
         }
-    });
+    })
+    .controller('dashboardController', function($scope){
+
+    })
+    ;
