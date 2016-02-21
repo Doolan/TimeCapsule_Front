@@ -16,12 +16,16 @@
                 if(city.currentCity){
                     self.pastCities[self.currentCity] = angular.copy(self.currentImages);
                 }
+                self.currentCity = city;
 
                 $http({
                    method: 'GET',
-                    url: 'mocks/chicago.json'
+                    url: 'http://timecapsulebackend.azurewebsites.net/images/getimagesinlocation',
+                    params: {city: city}
+
                 }).then(function(data){
                     self.currentImages = data.data;
+                    console.log(data.data);
                     callback(self.currentImages);
                 }, function(error){
                     console.log('Failure to load data', error);
