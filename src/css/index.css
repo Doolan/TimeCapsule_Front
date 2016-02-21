@@ -80,6 +80,11 @@ div.centered.name {
     background: #2b2b2b;
 }
 
+#picView {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
 #picView .ui.cards a.card, #picView .ui.link.card, #picView .ui.link.cards .card, #picView a.ui.card {
     /*max-width: 20vw;*/
     /*overflow: hidden;*/

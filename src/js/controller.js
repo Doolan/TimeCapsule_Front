@@ -71,6 +71,8 @@ angular.module('TimeCapsule')
             return true;
         };
 
+
+
     })
     .controller('loginController', function ($scope, $location) {
         $scope.redirectFunction = function () {
@@ -86,7 +88,7 @@ angular.module('TimeCapsule')
             }
         }
     })
-    .controller('dashboardController', function ($scope, $location) {
+    .controller('dashboardController', function ($scope, $location, CityService) {
         $scope.emptyfunc = function () {
         };
         $scope.redirectFunction = function (location) {
@@ -131,8 +133,14 @@ angular.module('TimeCapsule')
                 });
         };
 
+        $scope.exploreRandom = function(){
+            CityService.getCitesWithData(function(data){
+                $location.path('/capsule/' + data[(Math.floor((Math.random() * data.length)))]);
+            });
+        };
+
     })
-    .controller('capsuleController', function ($scope, PhotoService, $routeParams) {
+    .controller('capsuleController', function ($scope, PhotoService, $routeParams, $location) {
         //$scope.cityName = "Chicago";
         //$scope.contact = Contact.get({id: parseInt($routeParams.id, 10)});
         $scope.cityName = $routeParams.location ? $routeParams.location : "Chicago";
@@ -153,6 +161,10 @@ angular.module('TimeCapsule')
             on: 'hover'
         });
 
+        $scope.jumpToDash = function(){
+            $location.path('/dashboard');
+        };
+
         PhotoService.queryImagesForCity($scope.cityName, function (data) {
             $scope.cityImages = data;
         });
@@ -163,10 +175,6 @@ angular.module('TimeCapsule')
             percentPosition: true,
             //columnWidth: '.grid-sizer'
         });
-// layout Isotope after each image loads
-//        $scope.$grid.imagesLoaded().progress( function() {
-//            $scope.$grid.masonry();
-//        });
 
     })
     .controller('inputController', function ($scope, $location, CityService) {
@@ -195,7 +203,7 @@ angular.module('TimeCapsule')
             $location.url('/capsule/' + location);
         };//add string to path var
     })
-    .controller('imageUploadController', ['$scope',  'Upload', '$timeout','CityService', function ($scope, Upload, $timeout, CityService) {
+    .controller('imageUploadController', ['$scope',  'Upload', '$timeout','CityService', '$location', function ($scope, Upload, $timeout, CityService, $location) {
         $scope.phase={
             upload:true,
             crop:false,
@@ -217,29 +225,35 @@ angular.module('TimeCapsule')
         };
 
         $scope.imgData = {
-            Title: "",
+            title: "",
            // City: "",
-            Month:"",
-            Year:"",
-            Description:""
+            month:"",
+            year:"",
+            description:"",
+            ownerId:1,
+            path:"  ",
+
         };
 
         $scope.upload = function (dataUrl) {
-            $scope.imgData.City = $scope.mgsug.getValue()[0];
-            $scope.imgData.File = Upload.dataUrltoBlob(dataUrl);
+            $scope.imgData.city = $scope.mgsug.getValue()[0];
+            $scope.imgData.file = Upload.dataUrltoBlob(dataUrl);
             console.log($scope.imgData);
-            Upload.upload({
-                url: '',
-                data: $scope.imgData,
-            }).then(function (response) {
-                $timeout(function () {
-                    $scope.result = response.data;
-                });
-            }, function (response) {
-                if (response.status > 0) $scope.errorMsg = response.status
-                    + ': ' + response.data;
-            }, function (evt) {
-                $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
-            });
+            $location.path('/dashboard');
+            //Upload.upload({
+            //    url: '',
+            //    data: $scope.imgData,
+            //}).then(function (response) {
+            //    $timeout(function () {
+            //        $scope.result = response.data;
+            //    });
+            //}, function (response) {
+            //   // if (response.status > 0) $scope.errorMsg = response.status
+            //     //   + ': ' + response.data;
+            //    $location.path('/dashboard');
+            //}, function (evt) {
+            //    //$scope.progress = parseInt(100.0 * evt.loaded / evt.total);
+            //    $location.path('/dashboard');
+            //});
         }
     }]);

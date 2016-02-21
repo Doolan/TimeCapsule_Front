@@ -6,7 +6,7 @@
         <div class="two wide column computer only"><!-- spacer--></div>
         <div class="centered five wide computer twelve wide tablet column middle aligned">
             <hover-icon-card
-                    hover-content="View pictures from your current location"
+                    hover-content="Explore your Surroundings"
                     iconexpression="['map']"
                     content="Current Location"
                     callfunction="redirectFunction('/capsule')"
@@ -16,8 +16,8 @@
         <div class="one wide column computer only"><!-- spacer--></div>
         <div class="centered five wide computer twelve wide tablet column middle aligned">
             <hover-icon-card
-                    hover-content="View pictures from other locations"
-                    iconexpression="['military']"
+                    hover-content="Hop on a Plane to Explore other areas"
+                    iconexpression="['plane']"
                     callfunction="launchLogin()"
                     content="Travel"
             ></hover-icon-card>
@@ -28,20 +28,19 @@
         <div class="two wide column computer only"><!-- spacer--></div>
         <div class="centered five wide computer twelve wide tablet column middle aligned">
             <hover-icon-card
-                    hover-content="Upload and tag images"
+                    hover-content="Upload and Tag images to Fill in gaps"
                     iconexpression="['cloud', 'upload']"
                     callfunction="launchUpload()"
-                    content="Upload images"
+                    content="Upload Images"
             ></hover-icon-card>
-
         </div>
         <div class="one wide column computer only"><!-- spacer--></div>
         <div class="centered five wide computer twelve wide tablet column middle aligned">
             <hover-icon-card
-                    hover-content="View my profile and my pictures"
-                    iconexpression="['user']"
-                    callfunction="emptyfunc()"
-                    content="My Information"
+                    hover-content="Travel to new Lands"
+                    iconexpression="['world']"
+                    callfunction="exploreRandom()"
+                    content="Random"
             ></hover-icon-card>
         </div>
         <div class="two wide column computer only"><!-- spacer--></div>
@@ -49,3 +48,4 @@
 </div>
 </div>
 <city-input></city-input>
+<script>$('#dashboard').height(Math.max($('#faqs .container').height(), $('#dashboard').height()));</script>
