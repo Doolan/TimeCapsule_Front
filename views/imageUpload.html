@@ -1,10 +1,13 @@
 <div id="imageUpload" class="inner-module" ng-controller="imageUploadController as imgCtrl">
     <div class="ui container">
-        <h1>Image Upload (1/2)</h1>
+        <h1  ng-hide="phase.submit">Image Upload (1/2) </h1>
+        <h3 ng-hide="phase.submit">Crop and Image Upload</h3>
+        <h1  ng-show="phase.submit">Image Upload (2/2) </h1>
+        <h3 ng-show="phase.submit">Define Image Properties</h3>
         <div class="heading-underline"></div>
-        <div>Crop Image and Upload</div>
-        <form name="UploadForm" id="uploadForm">
-            <div class="ui centered grid upload">
+        <!--<div>Crop Image and Upload</div>-->
+        <form class="ui form" name="UploadForm" id="uploadForm">
+            <div class="ui centered grid upload" ng-hide="phase.submit">
                 <div class="ten wide computer twelve wide column tablet">
                     <div ngf-drop ng-model="picFile" ngf-pattern="image/*"
                          class="cropArea">
@@ -14,29 +17,84 @@
                     </div>
                 </div>
                 <div class="six wide computer twelve wide column tablet">
-                    <div>
+                    <div class=" centered previewImg">
                         <img ng-src="{{croppedDataUrl}}"/>
                     </div>
-                    <div class="ui buttons">
-                    <button class="ui left attached button" ngf-select ng-model="picFile" accept="image/*">
-                        Select Picture
-                    </button>
-                    <button class="ui right attached button" ng-click="upload(croppedDataUrl)">Submit</button>
+                    <div class="ui two flex buttons">
+                        <!--ng-class="{primary: phase.upload, inverted: phase.crop, blue:phase.crop }"-->
+                        <button class="ui  button"
+                                ng-class="{primary: phase.upload, inverted: phase.crop, blue:phase.crop }"
+                                ngf-select ng-model="picFile" accept="image/*"
+                                ng-click="phase.upload = false; phase.crop = true;">
+                            <i class="cloud upload icon"></i>
+                            Select Picture
+                        </button>
+                        <button class="ui green  button" ng-click="phase.crop = false; phase.submit = true;"
+                                ng-class="{inverted: phase.upload, disabled: phase.upload}">
+                            Next
+                            <i class="angle right icon"></i>
+                        </button>
+                        <!--<button class="ui attached button" ng-click="upload(croppedDataUrl)">Submit</button>-->
                     </div>
-
+                </div>
+            </div>
+            <div class="ui container" ng-show="phase.submit">
+                <div class="ui raised segment">
+                    <div class="field">
+                        <div class="ui sub header">Title</div>
+                        <div class="ui fluid input">
+                            <input type="text" name="title" ng-model="imgData.Title" required placeholder="Title">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui sub header">City:</div>
+                        <!--<div class="ui  input">-->
+                            <div id="magicSuggestOpen" required></div>
+                        <!--</div>-->
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <div class="ui sub header">Month</div>
+                            <div class="ui fluid input">
+                                <input type="text" ng-model="imgData.Month" name="title" required placeholder="Month">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui sub header">Year</div>
+                            <div class="ui fluid input">
+                                <input type="text"  ng-model="imgData.Year" name="title" required placeholder="Year">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui sub header">Description</div>
+                        <div class="ui fluid input">
+                            <textarea required ng-model="imgData.Description"></textarea>
+                        </div>
+                    </div>
+                    <div class="ui two flex buttons">
+                       <button class="ui  button" class="inverted blue"
+                               ng-click="phase.submit = false; phase.crop = true;">
+                           <i class="left right icon"></i>
+                            Back
+                        </button>
+                        <button class="ui green  button" ng-click="upload(croppedDataUrl)">
+                            Submit
+                        </button>
+                        <!--<button class="ui attached button" ng-click="upload(croppedDataUrl)">Submit</button>-->
+                    </div>
                 </div>
             </div>
 
 
-
             <!--<button ngf-select ng-model="picFile" accept="image/*">-->
-                <!--Select Picture-->
+            <!--Select Picture-->
             <!--</button>-->
 
 
             <!--<-->
 
-        <span class="progress" ng-show="progress >= 0">
+        <!--<span class="progress" ng-show="progress >= 0">-->
           <!--<div style="width:{{progress}}%" ng-bind="progress + '%'"></div>-->
         </span>
             <span ng-show="result">Upload Successful</span>

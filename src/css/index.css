@@ -134,5 +134,10 @@ form .progress {
 }
 
 #uploadForm {
-    margin-top: 15vh;
+    margin-top: 6vh;
+}
+
+.previewImg{
+    width:210px;
+    margin:3vh auto 3.7vh;
 }

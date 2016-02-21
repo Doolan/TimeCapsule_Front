@@ -77,6 +77,7 @@
                 data.forEach(function(item){
                     self.nameArray.push(item.Name);
                 });
+                callback(self.nameArray);
             });
 
         };

@@ -64,7 +64,6 @@ angular.module('TimeCapsule')
                 $('#login-modal .form .message').show();
                 return false;
             }
-            console.log("I was hit");
             $location.path('/dashboard/');
             //$scope.redirectFunction();
             //$location.redirect('/dashboard/');
@@ -174,21 +173,20 @@ angular.module('TimeCapsule')
         $scope.array = [];
         CityService.getCitesWithData(function (data) {
             $scope.array = data;
-            console.log(data, "input controller   ");
             msInit();
         });
         var msInit = function () {
             $scope.mgsug = $('#magicsuggest').magicSuggest({
                 data: $scope.array,
-                maxSelection: 1
+                maxSelection: 1,
+                allowFreeEntries: false//disallow free entries
 
                 //
             });
         };
-        console.log('hit input');
 
         $scope.travel = function () {
-            console.log($scope.mgsug.getValue());
+            //console.log($scope.mgsug.getValue());
             var location = $scope.mgsug.getValue()[0];
             $('#city-modal')
                 .modal('hide');
@@ -197,15 +195,42 @@ angular.module('TimeCapsule')
             $location.url('/capsule/' + location);
         };//add string to path var
     })
-    .controller('imageUploadController', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+    .controller('imageUploadController', ['$scope',  'Upload', '$timeout','CityService', function ($scope, Upload, $timeout, CityService) {
+        $scope.phase={
+            upload:true,
+            crop:false,
+            submit:false
+        };
 
+        $scope.array =[];
+
+        CityService.getCitesWithData(function (data) {
+            $scope.array = data;
+            msInit();
+        });
+        var msInit = function () {
+            $scope.mgsug = $('#magicSuggestOpen').magicSuggest({
+                data: $scope.array,
+                maxSelection: 1,
+                allowFreeEntries: true//allow free entries and new cities
+            });
+        };
+
+        $scope.imgData = {
+            Title: "",
+           // City: "",
+            Month:"",
+            Year:"",
+            Description:""
+        };
 
         $scope.upload = function (dataUrl) {
+            $scope.imgData.City = $scope.mgsug.getValue()[0];
+            $scope.imgData.File = Upload.dataUrltoBlob(dataUrl);
+            console.log($scope.imgData);
             Upload.upload({
-                url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-                data: {
-                    file: Upload.dataUrltoBlob(dataUrl)
-                },
+                url: '',
+                data: $scope.imgData,
             }).then(function (response) {
                 $timeout(function () {
                     $scope.result = response.data;
