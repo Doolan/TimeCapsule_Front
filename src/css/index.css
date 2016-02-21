@@ -87,11 +87,28 @@ div.centered.name {
 }
 
 #picView .ui.cards img {
-    max-width: 18vw;
+    max-width: 100%;
     overflow: hidden;
-    max-height: 20vh;
+    max-height: 30vh;;
 }
 
 #picView .ui.card {
     margin: .3em;
+}
+
+.grid.ui.cards, .grid-item .ui.card {
+    display: inline-block;
+    text-align: center;
+    max-width:300px;
+}
+
+.grid:after {
+    /*content: '';*/
+    display: block;
+    clear: both;
+}
+
+.grid-item {
+    float:left;
+
 }

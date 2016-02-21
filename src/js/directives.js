@@ -35,5 +35,11 @@ angular.module('TimeCapsule')
             callfunction:'&'
         }
     }
-});
+})
+    .directive('cityInput', function(){
+        return {
+            restrict:'E',
+            templateUrl:'../../views/subComponents/citySelectPopup.html'
+        }
+    });
 

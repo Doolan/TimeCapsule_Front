@@ -35,5 +35,49 @@
            query(cityName, callback);
        }
     }]);
+    app.service('CityService',['$http', function($http, $filter) {
+
+        var self = this;
+        self.cityArray =[];
+
+        self.query = function(callback) {
+           //callback( ["Chicago", "Los Angels", "New York", "Terre Haute"]);
+            $http({
+                method: 'GET',
+                url: 'http://timecapsulebackend.azurewebsites.net/locations/getAllLocationsWithPhotoCount'
+            }).then(function (data) {
+                self.cityArray = data.data;
+                callback(data.data);
+            }, function (error) {
+                console.log('Failure to load data', error);
+            });
+        };
+
+        self.getCitesWithData = function(callback)
+        {
+            self.query(function(data){
+                self.array = [];
+                data.forEach(function(item){
+                   // console.log
+                  if(item.Count > 0){
+                      self.array.push(item.Name);
+                  }
+               });
+                callback(self.array);
+            });
+        };
+
+        self.getAllCities = function(callback){
+            self.query(function(data){
+                self.nameArray = [];
+                data.forEach(function(item){
+                    self.nameArray.push(item.Name);
+                });
+            });
+
+        };
+
+    }]);
+
 })();
 

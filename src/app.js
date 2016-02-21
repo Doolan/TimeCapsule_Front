@@ -10,7 +10,7 @@
             .when('/dashboard', {
                 templateUrl: '../views/dashboard.html'
             })
-            .when('/capsule', {
+            .when('/capsule/:location', {
                 templateUrl: '../views/capsule.html'
             })
             .otherwise({

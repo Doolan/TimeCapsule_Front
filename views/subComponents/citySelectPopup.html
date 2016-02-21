@@ -1,0 +1,19 @@
+<!--<div id="magicsuggest" ng-controller="inputController">-->
+
+<div class="ui small modal" id="city-modal" ng-controller="inputController">
+    <div class="content">
+        <form class="ui large form">
+            <div class="ui sub header" ng-show="true">Travel</div>
+            <div class="ui sub header" ng-show="false">Log in</div>
+            <div id="magicsuggest" required></div>
+            <!--<div class="ui error message"></div>-->
+            <div class="ui error message"></div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui left floated cancel basic button ">Cancel</button>
+        <div class="login" ng-show="true">
+            <button class="ui active inverted green button" ng-click="travel()">Travel</button>
+        </div>
+    </div>
+</div>
