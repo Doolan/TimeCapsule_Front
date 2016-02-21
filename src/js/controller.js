@@ -94,6 +94,10 @@ angular.module('TimeCapsule')
             console.log(location);
             $location.url(location + "/Chicago");
         };
+        $scope.launchUpload = function(){
+            $location.path('/upload');
+        };
+
 
         $scope.launchLogin = function () {
             $('#city-modal')
@@ -193,4 +197,24 @@ angular.module('TimeCapsule')
             $location.url('/capsule/' + location);
         };//add string to path var
     })
-;
+    .controller('imageUploadController', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+
+
+        $scope.upload = function (dataUrl) {
+            Upload.upload({
+                url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+                data: {
+                    file: Upload.dataUrltoBlob(dataUrl)
+                },
+            }).then(function (response) {
+                $timeout(function () {
+                    $scope.result = response.data;
+                });
+            }, function (response) {
+                if (response.status > 0) $scope.errorMsg = response.status
+                    + ': ' + response.data;
+            }, function (evt) {
+                $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
+            });
+        }
+    }]);

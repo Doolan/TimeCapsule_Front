@@ -24,7 +24,16 @@ angular.module('TimeCapsule')
         };
 //}).directive('pictureView', function(){
 
-})  .directive('hoverIconCard', function(){
+})
+    .directive('imageUpload', function(){
+        return {
+            restrict: 'E',
+            templateUrl: '../../views/imageUpload.html'
+        }
+    })
+
+
+    .directive('hoverIconCard', function(){
     return{
         restrict:'E',
         templateUrl:'../../views/subComponents/hoverIconCard.html',

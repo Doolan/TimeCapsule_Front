@@ -1,0 +1,51 @@
+<div id="imageUpload" class="inner-module" ng-controller="imageUploadController as imgCtrl">
+    <div class="ui container">
+        <h1>Image Upload (1/2)</h1>
+        <div class="heading-underline"></div>
+        <div>Crop Image and Upload</div>
+        <form name="UploadForm" id="uploadForm">
+            <div class="ui centered grid upload">
+                <div class="ten wide computer twelve wide column tablet">
+                    <div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+                         class="cropArea">
+                        <img-crop image="picFile  | ngfDataUrl"
+                                  result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+                        </img-crop>
+                    </div>
+                </div>
+                <div class="six wide computer twelve wide column tablet">
+                    <div>
+                        <img ng-src="{{croppedDataUrl}}"/>
+                    </div>
+                    <div class="ui buttons">
+                    <button class="ui left attached button" ngf-select ng-model="picFile" accept="image/*">
+                        Select Picture
+                    </button>
+                    <button class="ui right attached button" ng-click="upload(croppedDataUrl)">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!--<button ngf-select ng-model="picFile" accept="image/*">-->
+                <!--Select Picture-->
+            <!--</button>-->
+
+
+            <!--<-->
+
+        <span class="progress" ng-show="progress >= 0">
+          <!--<div style="width:{{progress}}%" ng-bind="progress + '%'"></div>-->
+        </span>
+            <span ng-show="result">Upload Successful</span>
+            <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+
+
+        </form>
+    </div>
+</div>
+
+
+<!--Lots of this from their tutorial-->

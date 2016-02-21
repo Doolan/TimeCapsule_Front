@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('TimeCapsule', ['ngRoute','DataManager']);
+    var app = angular.module('TimeCapsule', ['ngRoute','DataManager','ngFileUpload', 'ngImgCrop' ]);
 
     app.config(["$routeProvider", function ($routeProvider, $routeParams) {
         $routeProvider
@@ -12,6 +12,9 @@
             })
             .when('/capsule/:location', {
                 templateUrl: '../views/capsule.html'
+            })
+            .when('/upload', {
+                templateUrl: '../views/imageUpload.html'
             })
             .otherwise({
                 redirectTo: '/home'
