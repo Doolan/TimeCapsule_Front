@@ -87,7 +87,34 @@ angular.module('TimeCapsule')
             }
         }
     })
-    .controller('dashboardController', function($scope){
+    .controller('dashboardController', function($scope, $location){
+        $scope.emptyfunc = function(){};
+        $scope.redirectFunction = function(location){
+            $location.path(location);
+        }
 
+    })
+    .controller('capsuleController', function($scope, PhotoService){
+        $scope.cityName = "Chicago";
+
+        $scope.cityImages = [ {
+            "Id":-1,
+            "Title":"Chicago Auto Show",
+            "Description":"The Chicago Auto Show is not only the nation's largest car show, it is also the longest running. The first show was held in the Chicago Coliseum in 1901. It received relatively little attention in the local press. Within a few short years, the show grew into a major tourist attraction. These photos are from the 1909 show.",
+            "Path": "../images/Chicago/12716328_10152896329597465_1232418463979988700_o.jpg",
+            "Location":"",
+            "OwnerId":"",
+            "DateUploaded":"",
+            "Year":1909,
+            "Month":-1
+        }];
+
+        $('.special.cards .image').dimmer({
+            on: 'hover'
+        });
+
+        PhotoService.queryImagesForCity($scope.cityName, function(data){
+            $scope.cityImages = data;
+        })
     })
     ;

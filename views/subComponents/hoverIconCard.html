@@ -6,7 +6,7 @@
                 <div class="content">
                     <div class="center">
                         <h3>{{hoverContent}}</h3>
-                        <div class="ui inverted button">Go</div>
+                        <div class="ui inverted button" ng-click="callfunction()">Go</div>
                     </div>
                 </div>
             </div>
@@ -19,6 +19,8 @@
         </div>
     </div>
 </div>
-<script>        $('.special.cards .icon-card').dimmer({
-    on: 'hover'
-});</script>
+<script>
+    $('.special.cards .icon-card').dimmer({
+        on: 'hover'
+    });
+</script>

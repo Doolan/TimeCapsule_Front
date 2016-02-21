@@ -22,14 +22,17 @@ angular.module('TimeCapsule')
             restrict: 'E',
             templateUrl: '../../views/login.html'
         };
-}).directive('hoverIconCard', function(){
+//}).directive('pictureView', function(){
+
+})  .directive('hoverIconCard', function(){
     return{
         restrict:'E',
         templateUrl:'../../views/subComponents/hoverIconCard.html',
         scope: {
             iconexpression: '=',//two way binding
             content: '@',
-            hoverContent:'@'
+            hoverContent:'@',
+            callfunction:'&'
         }
     }
 });

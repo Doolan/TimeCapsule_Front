@@ -1,4 +1,4 @@
-<div id="dashboard" ng-controller="dashboardController">
+<div id="dashboard" class="inner-module" ng-controller="dashboardController">
 <div class="ui container">
     <h1>Dashboard</h1>
     <div class="heading-underline"></div>
@@ -9,6 +9,8 @@
                     hover-content="View pictures from your current location"
                     iconexpression="['map']"
                     content="Current Location"
+                    callfunction="redirectFunction('/capsule')"
+
             ></hover-icon-card>
         </div>
         <div class="one wide column computer only"><!-- spacer--></div>
@@ -16,6 +18,7 @@
             <hover-icon-card
                     hover-content="View pictures from other locations"
                     iconexpression="['military']"
+                    callfunction="emptyfunc()"
                     content="Travel"
             ></hover-icon-card>
         </div>
@@ -27,6 +30,7 @@
             <hover-icon-card
                     hover-content="Upload and tag images"
                     iconexpression="['cloud', 'upload']"
+                    callfunction="emptyfunc()"
                     content="Upload images"
             ></hover-icon-card>
 
@@ -36,12 +40,11 @@
             <hover-icon-card
                     hover-content="View my profile and my pictures"
                     iconexpression="['user']"
+                    callfunction="emptyfunc()"
                     content="My Information"
             ></hover-icon-card>
         </div>
         <div class="two wide column computer only"><!-- spacer--></div>
     </div>
 </div>
-
-
 </div>

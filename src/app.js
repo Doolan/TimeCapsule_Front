@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('TimeCapsule', ['ngRoute']);
+    var app = angular.module('TimeCapsule', ['ngRoute','DataManager']);
 
     app.config(["$routeProvider", function ($routeProvider, $routeParams) {
         $routeProvider
@@ -9,6 +9,9 @@
             })
             .when('/dashboard', {
                 templateUrl: '../views/dashboard.html'
+            })
+            .when('/capsule', {
+                templateUrl: '../views/capsule.html'
             })
             .otherwise({
                 redirectTo: '/home'

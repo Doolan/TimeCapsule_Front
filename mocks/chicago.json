@@ -1,0 +1,78 @@
+[
+  {
+  "Id":-1,
+  "Title":"Chicago Auto Show",
+  "Description":"The Chicago Auto Show is not only the nation's largest car show, it is also the longest running. The first show was held in the Chicago Coliseum in 1901. It received relatively little attention in the local press. Within a few short years, the show grew into a major tourist attraction. These photos are from the 1909 show.",
+  "Path": "../images/Chicago/12716328_10152896329597465_1232418463979988700_o.jpg",
+  "Location":"",
+  "OwnerId":"",
+  "DateUploaded":"",
+  "Year":1909,
+  "Month":-1
+},
+  {
+    "Id":-1,
+    "Title":"Chicago Auto Show",
+    "Description":"The Chicago Auto Show is not only the nation's largest car show, it is also the longest running. The first show was held in the Chicago Coliseum in 1901. It received relatively little attention in the local press. Within a few short years, the show grew into a major tourist attraction. These photos are from the 1909 show.",
+    "Path": "../images/Chicago/12719113_10152896330027465_9097743760243972766_o.jpg",
+    "Location":"",
+    "OwnerId":"",
+    "DateUploaded":"",
+    "Year":1909,
+    "Month":-1
+  },
+  {
+    "Id":-1,
+    "Title":"The Oak Park Arms Hotel",
+    "Description":"",
+    "Path": "../images/Chicago/12514061_1122186674481373_1838448423974292008_o.jpg",
+    "Location":"",
+    "OwnerId":"",
+    "DateUploaded":"",
+    "Year":1925,
+    "Month":-1
+  },  {
+  "Id":-1,
+  "Title":"Belmont Western Clayborn Overpass",
+  "Description":"Bridge Dedication",
+  "Path": "../images/Chicago/1422441_1199363183426951_1075181766407782922_n.jpg",
+  "Location":"",
+  "OwnerId":"",
+  "DateUploaded":"",
+  "Year":1961,
+  "Month":11
+},
+  {
+    "Id":-1,
+    "Title":"Building of the Sears Tower",
+    "Description":"A construction worker stands atop the attenna of the Sears Tower, nearing completion, 1972, Chicago. He is untethered, about 1485 feet in the air",
+    "Path": "../images/Chicago/12717789_824403397705213_8865531983406655279_n.jpg",
+    "Location":"",
+    "OwnerId":"",
+    "DateUploaded":"",
+    "Year":1972,
+    "Month":-1
+  },
+  {
+    "Id":-1,
+    "Title":"Hippie Memorial",
+    "Description":"Arcola, Illinois is home to the world's only Hippie Memorial, created by the late Bob Moomaw. Bob gave life to his passions and opinions through his art, and beginning in 1992 he put his independent and eccentric artistry to work by creating this 62 feet long piece of art. The piece is a commentary about the era in which he lived and the profound effect it had on his life. When visiting, don’t forget to check out the nearby marker that provides an interpretation of his work.",
+    "Path": "../images/Chicago/10295544_10156451878995401_5261816434449651825_o.jpg",
+    "Location":"",
+    "OwnerId":"",
+    "DateUploaded":"",
+    "Year":1992,
+    "Month":-1
+  },
+  {
+    "Id":-1,
+    "Title":"Sears' Tower",
+    "Description":"Sears' Tower and a bridge",
+    "Path": "../images/Chicago/12715496_10154478639264528_635027160815590284_n.jpg",
+    "Location":"",
+    "OwnerId":"",
+    "DateUploaded":"",
+    "Year":2016,
+    "Month":2
+  }
+]

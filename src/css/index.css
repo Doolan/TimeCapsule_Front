@@ -60,7 +60,7 @@ div.centered.name {
     padding-bottom: 1em;
 }
 
-#dashboard{
+.inner-module{
     height: 110vh;
     background: url('/images/tiles/retina_wood.png') repeat center center ;
 }
@@ -69,7 +69,7 @@ div.centered.name {
     padding-top: 7vh;
 }
 
-#dashboard .container {
+.inner-module .container {
     padding-top: 3em;
 }
 
@@ -78,4 +78,20 @@ div.centered.name {
     height: 5px;
     /*background: #FFFFFF;*/
     background: #2b2b2b;
+}
+
+#picView .ui.cards a.card, #picView .ui.link.card, #picView .ui.link.cards .card, #picView a.ui.card {
+    /*max-width: 20vw;*/
+    /*overflow: hidden;*/
+    /*max-height: 20vh;*/
+}
+
+#picView .ui.cards img {
+    max-width: 18vw;
+    overflow: hidden;
+    max-height: 20vh;
+}
+
+#picView .ui.card {
+    margin: .3em;
 }
