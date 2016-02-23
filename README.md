@@ -8,7 +8,7 @@ And it is always updating and backfilling…
 I guess it’s not a time capsule at all
 
 ####What it Actually is:
->Time Capsul is cloud base platform for **publicly** document the world around us and what it once was.
+>Time Capsul is cloud base platform for **publicly** documenting the world around us and what it once was.
 >TimeCapsul asks its users to upload images from photo albums, frames, and even their phones. Then combine the images with a description to tell a story.
 >By combining everyone’s history and heritage we can remember where we came from, explore new locations and their history, and as a community document a more accurate past. 
 ><br>
